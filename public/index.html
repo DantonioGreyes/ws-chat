@@ -23,7 +23,8 @@
 <script>
     let getUrl = window.location;
     let baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[0];
-    const connection = new WebSocket('ws://'+baseUrl+':12345'),
+    console.log(baseUrl.replace('https://',''));
+    const connection = new WebSocket('ws://'+baseUrl.replace('https://','')+':12345'),
         box = document.getElementById('box'),
         msg = document.getElementById('msg');
 
