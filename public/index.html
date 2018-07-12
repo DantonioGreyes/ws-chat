@@ -21,7 +21,9 @@
     </body>
 </html>
 <script>
-    const connection = new WebSocket('ws://localhost:12345'),
+    let getUrl = window.location;
+    let baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[0];
+    const connection = new WebSocket('ws://'+baseUrl+':12345'),
         box = document.getElementById('box'),
         msg = document.getElementById('msg');
 
